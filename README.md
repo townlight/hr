@@ -48,4 +48,4 @@ bash scripts/verify-release.sh
 
 ## Licensing
 
-Code is Apache 2.0. Documentation is CC BY 4.0 unless otherwise noted. CivicHR is designed for local municipal operation and does not require outbound runtime calls in the default profile.
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). Documentation is CC BY 4.0 unless otherwise noted. CivicHR is designed for local municipal operation and does not require outbound runtime calls in the default profile.
