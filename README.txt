@@ -10,4 +10,4 @@ Run locally:
 
 Set CIVICHR_WORKPAPER_DB_URL to persist job-description drafts and onboarding packets. Without it, CivicHR remains deterministic and stateless.
 
-License: Apache 2.0 code, CC BY 4.0 docs.
+License: Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation: CC BY 4.0 (LICENSE-DOCS).
