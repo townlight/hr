@@ -1,4 +1,6 @@
-# CivicHR Milestones
+<a id="civichr-milestones"></a>
+
+# Townlight HR Milestones
 
 ## 0.1.0 Foundation
 

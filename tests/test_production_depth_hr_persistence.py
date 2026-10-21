@@ -76,7 +76,7 @@ def test_get_job_without_persistence_returns_actionable_503(monkeypatch) -> None
 
     assert response.status_code == 503
     detail = response.json()["detail"]
-    assert detail["message"] == "CivicHR workpaper persistence is not configured."
+    assert detail["message"] == "Townlight HR workpaper persistence is not configured."
     assert "Set CIVICHR_WORKPAPER_DB_URL" in detail["fix"]
 
 

@@ -18,5 +18,5 @@ def review_hr_sources(source_titles: list[str], approved_by_hr: bool) -> HRSourc
     if not titles:
         blockers.append("At least one adopted HR policy, template, or handbook source is required.")
     if not approved_by_hr:
-        blockers.append("HR must approve source materials before CivicHR drafts from them.")
+        blockers.append("HR must approve source materials before Townlight HR drafts from them.")
     return HRSourceReview(ready_for_drafting=not blockers, source_titles=titles, blockers=tuple(blockers))

@@ -1,4 +1,4 @@
-"""FastAPI runtime foundation for CivicHR."""
+"""FastAPI runtime foundation for Townlight HR."""
 
 import os
 
@@ -20,7 +20,7 @@ from civichr.sensitive_review import review_hr_topic
 from civichr.source_review import review_hr_sources
 from civichr.training_requirements import build_training_checklist
 
-app = FastAPI(title="CivicHR", version=__version__, description="Personnel-policy lookup, job-description drafts, onboarding packet checklists, and HR knowledge support for CivicSuite.")
+app = FastAPI(title='Townlight HR', version=__version__, description='Personnel-policy lookup, job-description drafts, onboarding packet checklists, and HR knowledge support for Townlight.')
 
 _workpaper_repository: HRWorkpaperRepository | None = None
 _workpaper_db_url: str | None = None
@@ -64,7 +64,7 @@ class IntakeTemplateRequest(BaseModel):
 
 @app.get("/")
 def root() -> dict[str, str]:
-    return {"name":"CivicHR","version":__version__,"status":"HR policy foundation plus workpaper persistence","message":"CivicHR package, API foundation, personnel-policy lookup outlines, handbook summaries, job-description drafts, classification lookups, onboarding checklists, optional database-backed job/onboarding workpapers, training references, intake templates, HR source review, sensitive-topic preflight, and public UI foundation are online; HRIS, payroll, benefits administration, personnel-file storage, employment-law advice, autonomous publication, live LLM calls, and external HR system integrations are not implemented yet.","next_step":"Post-v0.1.1 roadmap: HR approval queues, source connectors, and counsel review handoffs"}
+    return {"name":"CivicHR","version":__version__,"status":"HR policy foundation plus workpaper persistence","message":"Townlight HR package, API foundation, personnel-policy lookup outlines, handbook summaries, job-description drafts, classification lookups, onboarding checklists, optional database-backed job/onboarding workpapers, training references, intake templates, HR source review, sensitive-topic preflight, and public UI foundation are online; HRIS, payroll, benefits administration, personnel-file storage, employment-law advice, autonomous publication, live LLM calls, and external HR system integrations are not implemented yet.","next_step":"Post-v0.1.1 roadmap: HR approval queues, source connectors, and counsel review handoffs"}
 @app.get("/health")
 def health() -> dict[str,str]:
     return {"status":"ok","service":"civichr","version":__version__,"civiccore_version":CIVICCORE_VERSION}
@@ -91,7 +91,7 @@ def job_description(request: JobDescriptionRequest) -> dict[str, object]:
 @app.get("/api/v1/civichr/job-description/{draft_id}")
 def get_job_description(draft_id: str) -> dict[str, object]:
     if _workpaper_database_url() is None:
-        raise HTTPException(status_code=503, detail={"message":"CivicHR workpaper persistence is not configured.","fix":"Set CIVICHR_WORKPAPER_DB_URL to retrieve persisted job-description drafts."})
+        raise HTTPException(status_code=503, detail={"message":"Townlight HR workpaper persistence is not configured.","fix":"Set CIVICHR_WORKPAPER_DB_URL to retrieve persisted job-description drafts."})
     stored = _get_workpaper_repository().get_job_description(draft_id)
     if stored is None:
         raise HTTPException(status_code=404, detail={"message":"Job-description draft record not found.","fix":"Use a draft_id returned by POST /api/v1/civichr/job-description."})
@@ -112,7 +112,7 @@ def onboarding_packet(request: OnboardingRequest) -> dict[str, object]:
 @app.get("/api/v1/civichr/onboarding-packet/{packet_id}")
 def get_onboarding_packet(packet_id: str) -> dict[str, object]:
     if _workpaper_database_url() is None:
-        raise HTTPException(status_code=503, detail={"message":"CivicHR workpaper persistence is not configured.","fix":"Set CIVICHR_WORKPAPER_DB_URL to retrieve persisted onboarding packets."})
+        raise HTTPException(status_code=503, detail={"message":"Townlight HR workpaper persistence is not configured.","fix":"Set CIVICHR_WORKPAPER_DB_URL to retrieve persisted onboarding packets."})
     stored = _get_workpaper_repository().get_onboarding_packet(packet_id)
     if stored is None:
         raise HTTPException(status_code=404, detail={"message":"Onboarding packet record not found.","fix":"Use a packet_id returned by POST /api/v1/civichr/onboarding-packet."})

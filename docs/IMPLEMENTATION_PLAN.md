@@ -1,4 +1,6 @@
-# CivicHR Implementation Plan
+<a id="civichr-implementation-plan"></a>
+
+# Townlight HR Implementation Plan
 
 ## v0.1.0 shipped
 

@@ -1,6 +1,8 @@
-# CivicHR
+<a id="civichr"></a>
 
-CivicHR is the CivicSuite internal HR policy support module. Version 0.1.1 ships a local package, FastAPI runtime, deterministic helpers, optional database-backed HR workpapers, tests, release gates, public documentation, and browser-verified sample UI for HR policy support without becoming an HRIS.
+# Townlight HR
+
+Townlight HR is the Townlight internal HR policy support module. Version 0.1.1 ships a local package, FastAPI runtime, deterministic helpers, optional database-backed HR workpapers, tests, release gates, public documentation, and browser-verified sample UI for HR policy support without becoming an HRIS.
 
 ## Shipping in v0.1.1
 
@@ -23,7 +25,7 @@ CivicHR is the CivicSuite internal HR policy support module. Version 0.1.1 ships
 
 ## Install and run locally
 
-CivicHR v0.1.1 is pinned to `civiccore==0.3.0`.
+Townlight HR v0.1.1 is pinned to `civiccore==0.3.0`.
 
 ```bash
 python -m venv .venv
@@ -34,7 +36,7 @@ python -m uvicorn civichr.main:app --host 127.0.0.1 --port 8138
 
 Open `http://127.0.0.1:8138/civichr` for the browser sample and `http://127.0.0.1:8138/docs` for FastAPI docs.
 
-Set `CIVICHR_WORKPAPER_DB_URL` to persist job-description drafts and onboarding packets. Without it, CivicHR remains deterministic and stateless.
+Set `CIVICHR_WORKPAPER_DB_URL` to persist job-description drafts and onboarding packets. Without it, Townlight HR remains deterministic and stateless.
 
 ## Verification
 
@@ -48,4 +50,4 @@ bash scripts/verify-release.sh
 
 ## Licensing
 
-Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). Documentation is CC BY 4.0 unless otherwise noted. CivicHR is designed for local municipal operation and does not require outbound runtime calls in the default profile.
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md). Documentation is CC BY 4.0 unless otherwise noted. Townlight HR is designed for local municipal operation and does not require outbound runtime calls in the default profile.
