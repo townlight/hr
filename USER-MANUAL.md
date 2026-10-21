@@ -1,8 +1,10 @@
-# CivicHR User Manual
+<a id="civichr-user-manual"></a>
+
+# Townlight HR User Manual
 
 ## Non-technical staff guide
 
-CivicHR helps HR staff prepare policy lookup outlines, handbook summaries, job-description drafts, onboarding packets, training checklists, intake templates, and optionally retrieve saved job/onboarding workpapers. It is not an HRIS and does not make HR decisions.
+Townlight HR helps HR staff prepare policy lookup outlines, handbook summaries, job-description drafts, onboarding packets, training checklists, intake templates, and optionally retrieve saved job/onboarding workpapers. It is not an HRIS and does not make HR decisions.
 
 ### What staff can do today
 
@@ -37,4 +39,4 @@ flowchart LR
   F --> G
 ```
 
-CivicHR depends on `civiccore==0.3.0`. It makes no default outbound calls.
+Townlight HR depends on `civiccore==0.3.0`. It makes no default outbound calls.

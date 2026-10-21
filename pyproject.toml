@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "civichr"
 version = "0.1.1"
-description = "CivicHR foundation for personnel-policy lookup, job-description drafts, onboarding packets, and HR knowledge support."
+description = "Townlight HR foundation for personnel-policy lookup, job-description drafts, onboarding packets, and HR knowledge support."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "AGPL-3.0-only" }

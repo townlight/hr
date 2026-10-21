@@ -1,4 +1,4 @@
-"""Sensitive HR topic preflight for CivicHR."""
+"""Sensitive HR topic preflight for Townlight HR."""
 
 from dataclasses import dataclass
 
