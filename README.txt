@@ -1,13 +1,49 @@
-Townlight HR v0.1.1
+  Parked foundation — outside the released Windows suite. This repository contains exploratory/support code, not a completed Townlight product. It is not installed or supported by Windows 1.8.1.1. Historical examples, package names and dependency pins below describe this foundation and must not be used as current suite installation instructions. Use the released Windows suite, current modules and acceptance limits.
 
-Townlight HR supports HR policy work without becoming an HRIS. It ships personnel-policy lookup outlines, handbook summaries, job-description drafts, optional database-backed job/onboarding workpapers, classification references, onboarding and training checklists, intake templates, source review, sensitive-topic preflight, FastAPI endpoints, tests, docs, and browser QA evidence.
+Townlight HR
 
-It does not ship payroll, benefits administration, personnel records management, employment-law advice, autonomous HR decisions, grievance case tracking, personnel-file ingestion, live LLM calls, or external HR/payroll connector runtime.
+Townlight HR is the Townlight internal HR policy support module. Version 0.1.1 ships a local package, FastAPI runtime, deterministic helpers, optional database-backed HR workpapers, tests, release gates, public documentation, and browser-verified sample UI for HR policy support without becoming an HRIS.
 
-Run locally:
-  python -m pip install -e ".[dev]"
-  python -m uvicorn civichr.main:app --host 127.0.0.1 --port 8138
+Shipping in v0.1.1
+
+- Personnel-policy lookup outlines against HR-approved source titles.
+- Employee handbook plain-language summary drafts.
+- Job-description draft scaffolds from role context.
+- Optional SQLAlchemy-backed job-description and onboarding-packet workpaper records through CIVICHR_WORKPAPER_DB_URL.
+- Salary schedule and position-classification reference lookup.
+- Onboarding packet and training requirement checklists.
+- Grievance/complaint intake templates only.
+- HR source-readiness review and sensitive-topic preflight.
+
+Not shipped yet
+
+- HRIS, payroll, benefits administration, or personnel records management.
+- Employment-law advice, eligibility decisions, discipline recommendations, or autonomous HR determinations.
+- Grievance/complaint case tracking.
+- Personnel-file ingestion, PHI storage, background-check storage, or compensation-sensitive record storage.
+- Live LLM calls, cloud AI, or external HR/payroll connector runtime.
+
+Install and run locally
+
+Townlight HR v0.1.1 is pinned to civiccore==0.3.0.
+
+    python -m venv .venv
+    . .venv/Scripts/activate
+    python -m pip install -e ".[dev]"
+    python -m uvicorn civichr.main:app --host 127.0.0.1 --port 8138
+
+Open http://127.0.0.1:8138/civichr for the browser sample and http://127.0.0.1:8138/docs for FastAPI docs.
 
 Set CIVICHR_WORKPAPER_DB_URL to persist job-description drafts and onboarding packets. Without it, Townlight HR remains deterministic and stateless.
 
-License: Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation: CC BY 4.0 (LICENSE-DOCS).
+Verification
+
+    python -m pytest -q
+    bash scripts/verify-docs.sh
+    python scripts/check-civiccore-placeholder-imports.py
+    python -m ruff check .
+    bash scripts/verify-release.sh
+
+Licensing
+
+Code: AGPL-3.0-only, with the TownLight Public Institution Exception for qualifying deployments. See LICENSE and LICENSE-EXCEPTION.md. Documentation is CC BY 4.0 unless otherwise noted. Townlight HR is designed for local municipal operation and does not require outbound runtime calls in the default profile.
